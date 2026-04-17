@@ -9,7 +9,8 @@ export default{
         id:{
           type : Sequelize.INTEGER,
           allowNull : false,
-          primaryKey : true
+          primaryKey : true,
+          autoIncrement: true
         },
         nome: { type: Sequelize.STRING, allowNull: false },
         descricao: { type: Sequelize.TEXT },

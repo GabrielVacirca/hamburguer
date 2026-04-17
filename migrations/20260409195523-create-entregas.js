@@ -8,7 +8,9 @@ export default {
         type : Sequelize.INTEGER,
         allowNull : false,
         primaryKey : true,
-        references : { model : 'pedidos', key : 'id', onDelete : 'CASCADE' , onUpdate : 'CASCADE' }
+        references : { model : 'pedidos', key : 'id' },
+        onDelete : 'CASCADE',
+        onUpdate : 'CASCADE'
       },
       codigo_rastreio:{
         type: Sequelize.STRING,
