@@ -6,7 +6,11 @@ export default class Pedido extends Model{
         Pedido.hasOne(models.Entrega, {
             foreignKey: 'pedido_id',
             as: 'entrega'
-        })
+        });
+        Pedido.hasMany(models.Avaliacao, {
+            foreignKey: 'pedido_id',
+            as: 'avaliacoes'
+        });
     }
 };
 
@@ -29,10 +33,10 @@ Pedido.init({
         type: DataTypes.STRING,
         allowNull : false
     }
-}, sequelize,
-{
+}, {
+    sequelize,
+    modelName: 'Pedido',
     tableName : 'pedidos',
-    timestamps : true, // criar os campos deleteAt e updatedAt
+    timestamps : true,
     paranoid : true
-}
-)
+});
